@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Ephphatha Steel & Fabrication</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+       /* General Styles */
+       body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+/* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure header stays on top of other content */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    padding-top: 80px; /* Add padding to the body to prevent the header from overlapping the content */
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    padding-top: 80px; /* Add padding to the body to prevent the header from overlapping the content */
+}
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-container img {
+            height: 50px;
+            width: 50px;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu a {
+            color: #333;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .menu a:hover {
+            color: #0056b3;
+        }
+
+
+        /* Fade In Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+         /* About Section */
+        .about-container {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        /* Image Styling */
+         .about-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+            margin-bottom: 20px; /* Space below the image */
+            animation: fadeIn 1.5s ease-out; /* Fade-in animation */
+        }
+
+
+        .about-container h1 {
+            font-size: 3em;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .about-content {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: 20px;
+            opacity: 0;
+            animation: slideUp 2s ease-out forwards;
+            animation-delay: 1s;
+        }
+
+        .about-content h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #619cf4;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .about-content p {
+            font-size: 1.1em;
+            color: #f0f0f0;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* Mission & Vision Section */
+        .mission-vision {
+            padding: 50px 20px;
+            background-image: url('mission-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+
+        .mission-vision h2 {
+            font-size: 2.0em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .mission-vision h3 {
+            font-size: 2.5em;
+            margin-top: 10px;
+            color: #333;
+        }
+    
+
+        .mission-vision .card {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
+            margin: 20px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 250px;
+            max-height: 350px;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out forwards;
+        }
+
+        .mission-vision .card p {
+            font-size: 1.1em;
+            color: #555;
+            text-align: justify;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+/* Footer Section Styles */
+.footer {
+    background-color: #2d738f;
+    color: #fff;
+    padding: 50px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-logo-img {
+    width: 150px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin: 10px 0;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #f1c40f;
+}
+
+.footer-contact p,
+.footer-contact a {
+    font-size: 14px;
+}
+/* Box Footer Styles */
+.box-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;  /* Allow wrapping on smaller screens */
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.contact-form-container {
+    flex: 1;
+    max-width: 600px;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.contact-form-container h4 {
+    font-size: 18px;
+    color: #f1c40f;
+    margin-bottom: 20px;
+}
+
+.contact-form-container .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form-container label {
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.contact-form-container input,
+.contact-form-container textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.contact-form-container input:focus,
+.contact-form-container textarea:focus {
+    border-color: #f1c40f;
+    outline: none;
+}
+
+.contact-form-container button {
+    background-color: #f1c40f;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form-container button:hover {
+    background-color: #e67e22;
+}
+
+.footer-location {
+    flex: 1;
+    max-width: 600px;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.footer-location h4 {
+    font-size: 18px;
+    color: #f1c40f;
+    margin-bottom: 10px;
+}
+
+.footer-location p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 200px;
+    border: 0;
+}
+
+/* Media Queries for Footer */
+@media (max-width: 768px) {
+    .box-footer {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
+
+    .contact-form-container,
+    .footer-location {
+        max-width: 100%;
+        margin-bottom: 20px; /* Space between stacked sections */
+    }
+
+    .map-container iframe {
+        height: 250px; /* Adjust map height on small screens */
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="img1.jpg" alt="Ephphatha Logo" class="logo-image">
+            <div class="logo-text">
+                <span>EPHPHATHA</span>
+                <span>TRADING &</span>
+                <span>SERVICES</span>
+            </div>
+        </div>
+        <nav class="menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="collection.html">Collections</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+
+    <!-- About Section -->
+    <div class="about-container">
+        <img src="aboutbg.jpeg" alt="Ephphatha Logo" class="logo-image">
+        <div class="about-content">
+            <h2>Who We Are</h2>
+            <p>
+                Ephphatha Trading Services WLL was established in the State of Qatar to provide specialist services to the Construction Industry with extensive experience in products & services with the brands we represent. </p>
+                <p> Customer needs and requirements are para- mount and we are constantly endeavor to exceed their expectations.</p>
+                <p> Within a short span of time, we have proven itself as a leading contractor for providing total turnkey sup- port & providing complete satisfaction across all services provided by us. </p>
+                <p> deal with products from world class certified man- ufacturers & provide solutions to both and private sec- tors. As a qualified and experienced contractor, we pride on its workmanship & quality.</p>
+                <p>We are managed by experienced and professionally qualified staff with proven track record of completing the projects ahead of schedule with the highest safety and quality standards.
+            </p>
+                 </div>
+    </div>
+
+    <!-- Mission & Vision Section -->
+    <div class="mission-vision">
+        <h2>"With EPHPHATHA's highly skilled <br> workforce we ensure the highest <br>possiblen project quality and on<br> time delivery"</h2>
+        <div class="card" style="animation-delay: 0.5s;">
+            <h3>Mission</h3>
+            <p>To achieve trust of our customers by providing quality products, timely service and exceptional value.</p>
+        </div>
+        <div class="card" style="animation-delay: 1s;">
+            <h3>Vision</h3>
+            <p>To provide highest quality by remaining committed to evolving technology and become Partner of Choice in the construction Industry.</p>
+        </div>
+    </div>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-content">
+        <!-- Footer Logo Section -->
+        <div class="footer-logo">
+            <img src="img1.jpg" alt="Ephphatha Logo" class="footer-logo-img">
+        </div>
+        
+        <!-- Footer Links Section -->
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="collection.html">Collections</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+           <!-- Footer Contact Section -->
+        <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <p><strong>Phone:</strong> +974 30144534, +974 50559446, +974 44326379</p>
+            <p><strong>Email:</strong> <a href="mailto:ephphathaqa@gmail.com">ephphathaqa@gmail.com</a></p>
+            <p><strong>Support:</strong> <a href="mailto:aliephphathaqa@gmail.com">aliephphathaqa@gmail.com</a></p>
+        </div>
+    </div>
+    <div class="box-footer">
+        <!-- Contact Form Section -->
+        <div class="contact-form-container">
+            <h4>Send Us A Message</h4>
+            <form id="contactForm" action="mailto:ephphathaqa@gmail.com" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Your Email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    
+        <!-- Location Section (Google Maps Embed) -->
+        <div class="footer-location">
+            <h4>Our Location</h4>
+            <p>We are located in Doha, Qatar.</p>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.5270486320227!2d51.529432!3d25.2844629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45c5f8d8e0b65b%3A0x2e6b22f56b8af54a!2sACE%20Business%20Centre%2C%20Muntaza%2C%20Doha%2C%20Qatar!5e0!3m2!1sen!2sqa!4v1634812304880!5m2!1sen!2sqa"
+                    width="100%" 
+                    height="200" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer Bottom Section -->
+    <div class="footer-bottom">
+        <p>&copy; 2024 Ephphatha Steel & Fabrication. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

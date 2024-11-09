@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Ephphatha Steel & Fabrication</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure header stays on top of other content */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    padding-top: 80px; /* Add padding to the body to prevent the header from overlapping the content */
+}
+
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-container img {
+            height: 50px;
+            width: 50px;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu a {
+            color: #333;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .menu a:hover {
+            color: #0056b3;
+        }
+
+
+        /* Contact Section */
+.contact-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: white;
+    background-size: cover; /* Makes the background image cover the entire section */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    border-radius: 8px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+        .contact-page h1 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .contact-page p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+            max-width: 800px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* Contact Details Section */
+        .contact-details {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-details h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .contact-details p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        /* Button Styling */
+        .contact-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .contact-btns a {
+            padding: 12px 20px;
+            background-color: #25d366; /* WhatsApp green color */
+            color: white;
+            border-radius: 4px;
+            font-size: 1rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-btns a:hover {
+            background-color: #128c7e;
+        }
+
+        .contact-btns a.email-btn {
+            background-color: #007bff; /* Email button color */
+        }
+
+        .contact-btns a.email-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .contact-btns i {
+            font-size: 1.3rem;
+        }
+
+        /* Fade In Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+/* Footer Section Styles */
+.footer {
+    background-color: #2d738f;
+    color: #fff;
+    padding: 50px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-logo-img {
+    width: 150px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin: 10px 0;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #f1c40f;
+}
+
+.footer-contact p,
+.footer-contact a {
+    font-size: 14px;
+}
+/* Box Footer Styles */
+.box-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;  /* Allow wrapping on smaller screens */
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.contact-form-container {
+    flex: 1;
+    max-width: 600px;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.contact-form-container h4 {
+    font-size: 18px;
+    color: #f1c40f;
+    margin-bottom: 20px;
+}
+
+.contact-form-container .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form-container label {
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.contact-form-container input,
+.contact-form-container textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.contact-form-container input:focus,
+.contact-form-container textarea:focus {
+    border-color: #f1c40f;
+    outline: none;
+}
+
+.contact-form-container button {
+    background-color: #f1c40f;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form-container button:hover {
+    background-color: #e67e22;
+}
+
+.footer-location {
+    flex: 1;
+    max-width: 600px;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.footer-location h4 {
+    font-size: 18px;
+    color: #f1c40f;
+    margin-bottom: 10px;
+}
+
+.footer-location p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 200px;
+    border: 0;
+}
+
+/* Media Queries for Footer */
+@media (max-width: 768px) {
+    .box-footer {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
+
+    .contact-form-container,
+    .footer-location {
+        max-width: 100%;
+        margin-bottom: 20px; /* Space between stacked sections */
+    }
+
+    .map-container iframe {
+        height: 250px; /* Adjust map height on small screens */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="img1.jpg" alt="Ephphatha Logo" class="logo-image">
+            <div class="logo-text">
+                <span>EPHPHATHA</span>
+                <span>TRADING &</span>
+                <span>SERVICES</span>
+            </div>
+        </div>
+        <nav class="menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="collection.html">Collections</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Contact Details Section -->
+    <section class="contact-page">
+        <h1>Contact Ephphatha Steel & Fabrication</h1>
+        <p>If you have any questions or inquiries, please feel free to reach out to us via email or WhatsApp.</p>
+        
+        <!-- Contact Details -->
+        <div class="contact-details">
+            <h1>Contact Information</h1>
+            <p>Phone: +974 30144534, +974 50559446, +974 44326379</p>
+            <p>Email: <a href="mailto:ephphathaqa@gmail.com">ephphathaqa@gmail.com</a></p>
+            <p>Support: <a href="mailto:aliephphathaqa@gmail.com">aliephphathaqa@gmail.com</a></p>
+        </div>
+
+        <!-- Contact Buttons -->
+        <div class="contact-btns">
+            <!-- WhatsApp Button -->
+            <a href="https://wa.me/+97430144534" target="_blank">
+                <i class="fa fa-whatsapp"></i> Contact us on WhatsApp
+            </a>
+            <!-- Email Button -->
+            <a href="mailto:ephphathaqa@gmail.com" class="email-btn">
+                <i class="fa fa-envelope"></i> Email Us
+            </a>
+        </div>
+    </section>
+    
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-content">
+        <!-- Footer Logo Section -->
+        <div class="footer-logo">
+            <img src="img1.jpg" alt="Ephphatha Logo" class="footer-logo-img">
+        </div>
+        
+        <!-- Footer Links Section -->
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="collection.html">Collections</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+           <!-- Footer Contact Section -->
+        <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <p><strong>Phone:</strong> +974 30144534, +974 50559446, +974 44326379</p>
+            <p><strong>Email:</strong> <a href="mailto:ephphathaqa@gmail.com">ephphathaqa@gmail.com</a></p>
+            <p><strong>Support:</strong> <a href="mailto:aliephphathaqa@gmail.com">aliephphathaqa@gmail.com</a></p>
+        </div>
+    </div>
+    <div class="box-footer">
+        <!-- Contact Form Section -->
+        <div class="contact-form-container">
+            <h4>Send Us A Message</h4>
+            <form id="contactForm" action="mailto:ephphathaqa@gmail.com" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Your Email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    
+        <!-- Location Section (Google Maps Embed) -->
+        <div class="footer-location">
+            <h4>Our Location</h4>
+            <p>We are located in Doha, Qatar.</p>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.5270486320227!2d51.529432!3d25.2844629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45c5f8d8e0b65b%3A0x2e6b22f56b8af54a!2sACE%20Business%20Centre%2C%20Muntaza%2C%20Doha%2C%20Qatar!5e0!3m2!1sen!2sqa!4v1634812304880!5m2!1sen!2sqa"
+                    width="100%" 
+                    height="200" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer Bottom Section -->
+    <div class="footer-bottom">
+        <p>&copy; 2024 Ephphatha Steel & Fabrication. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

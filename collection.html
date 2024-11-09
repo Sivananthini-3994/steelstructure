@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections - Ephphatha Steel & Fabrication</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure header stays on top of other content */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    padding-top: 80px; /* Add padding to the body to prevent the header from overlapping the content */
+}
+
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-container img {
+            height: 50px;
+            width: 50px;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu a {
+            color: #333;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .menu a:hover {
+            color: #0056b3;
+        }
+
+        /* Collection Section Styling */
+        .collections {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px 50px;
+            background-color: #fff;
+        }
+
+        .collection-item {
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .collection-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .collection-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .collection-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .collection-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .collection-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .collection-description {
+            font-size: 1rem;
+            color: #777;
+        }
+        /* Popup Styling */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #fff;
+    display: flex;
+    max-width: 900px;
+    width: 100%;
+    height: 450px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.popup img {
+    max-width: 350px;
+    min-height: 400px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.popup-description {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.popup-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 45px;
+    color: #333;
+    text-align: left;
+}
+
+.popup-description p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.popup-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+}
+
+.popup-button {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.popup-button:hover {
+    background-color: #0056b3;
+}
+
+.popup-close {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    font-size: 30px;
+    color:black;
+    cursor: pointer;
+}
+
+/* Footer Section Styles */
+.footer {
+    background-color: #2d738f;
+    color: #fff;
+    padding: 50px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-logo-img {
+    width: 150px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin: 10px 0;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #f1c40f;
+}
+
+.footer-contact p,
+.footer-contact a {
+    font-size: 14px;
+}
+/* Box Footer Styles */
+.box-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;  /* Allow wrapping on smaller screens */
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.contact-form-container {
+    flex: 1;
+    max-width: 600px;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.contact-form-container h4 {
+    font-size: 18px;
+    color: #f1c40f;
+    margin-bottom: 20px;
+}
+
+.contact-form-container .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form-container label {
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.contact-form-container input,
+.contact-form-container textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.contact-form-container input:focus,
+.contact-form-container textarea:focus {
+    border-color: #f1c40f;
+    outline: none;
+}
+
+.contact-form-container button {
+    background-color: #f1c40f;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form-container button:hover {
+    background-color: #e67e22;
+}
+
+.footer-location {
+    flex: 1;
+    max-width: 600px;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.footer-location h4 {
+    font-size: 18px;
+    color: #f1c40f;
+    margin-bottom: 10px;
+}
+
+.footer-location p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 200px;
+    border: 0;
+}
+
+/* Media Queries for Footer */
+@media (max-width: 768px) {
+    .box-footer {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
+
+    .contact-form-container,
+    .footer-location {
+        max-width: 100%;
+        margin-bottom: 20px; /* Space between stacked sections */
+    }
+
+    .map-container iframe {
+        height: 250px; /* Adjust map height on small screens */
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="img1.jpg" alt="Ephphatha Logo" class="logo-image">
+            <div class="logo-text">
+                <span>EPHPHATHA</span>
+                <span>TRADING &</span>
+                <span>SERVICES</span>
+            </div>
+        </div>
+        <nav class="menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="collection.html">Collections</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Collections Section -->
+    <section class="collections">
+        <!-- Glass Work Steps -->
+        <div class="collection-item">
+            <img src="collection1.jpg" alt="Glass Work Steps">
+            <div class="collection-info">
+                <h2 class="collection-title">Glass Work Steps</h2>
+                <p class="collection-description">Our glasswork process involves precision cutting, shaping, and installation to ensure high standards of craftsmanship and durability.</p>
+            </div>
+        </div>
+
+        <!-- Steel Customization -->
+        <div class="collection-item">
+            <img src="collection2.jpg" alt="Steel Customization">
+            <div class="collection-info">
+                <h2 class="collection-title">Steel Customization</h2>
+                <p class="collection-description">Tailor-made steel solutions designed to meet your specific project needs, ensuring precision and quality.</p>
+            </div>
+        </div>
+
+        <!-- Steel Work -->
+        <div class="collection-item">
+            <img src="collection3.jpg" alt="Steel Work">
+            <div class="collection-info">
+                <h2 class="collection-title">Steel Work</h2>
+                <p class="collection-description">We specialize in fabricating high-quality steel structures for a range of applications, from residential to industrial projects.</p>
+            </div>
+        </div>
+
+        <!-- Glass Work -->
+        <div class="collection-item">
+            <img src="collection4.jpg" alt="Glass Work">
+            <div class="collection-info">
+                <h2 class="collection-title">Steel Fencing</h2>
+                <p class="collection-description">Robust steel fencing options for residential and commercial properties, offering security and durability.</p>
+            </div>
+        </div>
+
+        <!-- Additional Collections -->
+        <div class="collection-item">
+            <img src="collection10.jpg" alt="Collection 10">
+            <div class="collection-info">
+                <h2 class="collection-title">Industrial Glass</h2>
+                <p class="collection-description">Glass solutions for industrial buildings and commercial projects, ensuring quality and security.</p>
+            </div>
+        </div>
+
+        <div class="collection-item">
+            <img src="collection6.jpg" alt="Collection 6">
+            <div class="collection-info">
+                <h2 class="collection-title">Glass Work</h2>
+                <p class="collection-description">We provide high-quality glasswork solutions for residential and commercial projects, including windows, doors, and facades.</p>
+            </div>
+        </div>
+
+        <div class="collection-item">
+            <img src="collection7.jpg" alt="Collection 7">
+            <div class="collection-info">
+                <h2 class="collection-title">Glass Facades</h2>
+                <p class="collection-description">Modern glass facades to enhance the aesthetic appeal of your building while ensuring insulation and safety.</p>
+            </div>
+        </div>
+
+        <div class="collection-item">
+            <img src="collection8.jpg" alt="Collection 8">
+            <div class="collection-info">
+                <h2 class="collection-title">Glass Balustrades</h2>
+                <p class="collection-description">Stylish and safe glass balustrades for stairways, balconies, and terraces.</p>
+            </div>
+        </div>
+
+        <div class="collection-item">
+            <img src="collection9.jpg" alt="Collection 9">
+            <div class="collection-info">
+                <h2 class="collection-title">Custom Glass Products</h2>
+                <p class="collection-description">Bespoke glass solutions crafted to your specifications for a personalized finish.</p>
+            </div>
+        </div>
+
+        <div class="collection-item">
+            <img src="collection5.jpg" alt="Collection 5">
+            <div class="collection-info">
+                <h2 class="collection-title">Steel Structures</h2>
+                <p class="collection-description">High-quality steel fabrication for various structural projects, ensuring strength and safety.</p>
+            </div>
+        </div>
+
+        <!-- Additional Collections (2 more images) -->
+        <div class="collection-item">
+            <img src="collection11.jpg" alt="Collection 11">
+            <div class="collection-info">
+                <h2 class="collection-title">Glass Partitions</h2>
+                <p class="collection-description">Elegant glass partitions for office and residential spaces, providing flexibility and modern appeal.</p>
+            </div>
+        </div>
+
+        <div class="collection-item">
+            <img src="collection12.jpg" alt="Collection 12">
+            <div class="collection-info">
+                <h2 class="collection-title">Custom Glass Gates</h2>
+                <p class="collection-description">Handcrafted Glass gates designed to provide security and complement your property’s aesthetic.</p>
+            </div>
+        </div>
+
+    </section>
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <div class="popup-close" onclick="closePopup()">&times;</div>
+   
+            <img id="popup-image" src="" alt="">
+            <div class="popup-description">
+                <h2 class="popup-title" id="popup-title"></h2>
+                <p id="popup-description"></p>
+                <div class="popup-buttons">
+                    <a href="mailto:ephphathaqa@gmail.com" class="popup-button">Contact</a>
+                    <a href="https://wa.me/1234567890" class="popup-button">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+        <div class="popup-close" onclick="closePopup()">&times;</div>
+    </div>
+    
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-content">
+        <!-- Footer Logo Section -->
+        <div class="footer-logo">
+            <img src="img1.jpg" alt="Ephphatha Logo" class="footer-logo-img">
+        </div>
+        
+        <!-- Footer Links Section -->
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="collection.html">Collections</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+           <!-- Footer Contact Section -->
+        <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <p><strong>Phone:</strong> +974 30144534, +974 50559446, +974 44326379</p>
+            <p><strong>Email:</strong> <a href="mailto:ephphathaqa@gmail.com">ephphathaqa@gmail.com</a></p>
+            <p><strong>Support:</strong> <a href="mailto:aliephphathaqa@gmail.com">aliephphathaqa@gmail.com</a></p>
+        </div>
+    </div>
+    <div class="box-footer">
+        <!-- Contact Form Section -->
+        <div class="contact-form-container">
+            <h4>Send Us A Message</h4>
+            <form id="contactForm" action="mailto:ephphathaqa@gmail.com" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Your Email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    
+        <!-- Location Section (Google Maps Embed) -->
+        <div class="footer-location">
+            <h4>Our Location</h4>
+            <p>We are located in Doha, Qatar.</p>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.5270486320227!2d51.529432!3d25.2844629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45c5f8d8e0b65b%3A0x2e6b22f56b8af54a!2sACE%20Business%20Centre%2C%20Muntaza%2C%20Doha%2C%20Qatar!5e0!3m2!1sen!2sqa!4v1634812304880!5m2!1sen!2sqa"
+                    width="100%" 
+                    height="200" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer Bottom Section -->
+    <div class="footer-bottom">
+        <p>&copy; 2024 Ephphatha Steel & Fabrication. All Rights Reserved.</p>
+    </div>
+</footer>
+
+
+    
+    <script>
+        // Function to open the popup with the relevant content
+        function openPopup(title, description, imageUrl) {
+            // Set the content inside the popup
+            document.getElementById('popup-title').innerText = title;
+            document.getElementById('popup-description').innerText = description;
+            document.getElementById('popup-image').src = imageUrl;
+    
+            // Display the popup
+            document.getElementById('popup').style.display = 'flex';
+        }
+    
+        // Function to close the popup
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    
+        // Add event listeners to each collection item
+        document.querySelectorAll('.collection-item').forEach(function(item) {
+            item.addEventListener('click', function() {
+                const title = item.querySelector('.collection-title').innerText;
+                const description = item.querySelector('.collection-description').innerText;
+                const imageUrl = item.querySelector('img').src;
+    
+                openPopup(title, description, imageUrl);
+            });
+        });
+    </script>
+    
+</body>
+</html>
